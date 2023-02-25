@@ -1,7 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
 from blog.models import KategoriModel
-from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from blog.abstract_model import DateAbstractModel
 
