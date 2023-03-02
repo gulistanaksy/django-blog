@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %} İletişim {% endblock %}
 
 {% block content %}
-    {% if sayi == 5 %}
-        sayi 5 tir
-    {% else %}
-        sayi 5 değildir
-    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form| crispy}}
+        <input type="submit" class="btn btn-danger mt-3 mb-3" value="Gönder">
+    </form>
 {% endblock %}
