@@ -6,3 +6,5 @@ yazi_resimleri
 media
 avatar
 .env
+prod.sqlite3
+logs
