@@ -16,7 +16,10 @@
         <p class="card-text">{{ yazi.icerik|safe }}</p>
         <p class="card-text">
             <small class="text-muted">
-            Önce Paylaşıldı: {{yazi.duzenlenme_tarihi|timesince}}</small>
+              Yazar: <a href="{% url 'profil' username=yazi.yazar.username %}">{{yazi.yazar.username}}</a>
+              <br>
+              Önce Paylaşıldı: {{yazi.duzenlenme_tarihi|timesince}}
+            </small>
             {% if request.user == yazi.yazar %}
               <p>
                 <a class="btn btn-primary" href="{% url 'yazi-guncelle' slug=yazi.slug %}">Düzenle</a>
@@ -40,6 +43,9 @@
 {% else %}
     <p>Yorum yapmak için lütfen üye girişi yapınız.</p>
 {% endif %}
+
+{% include 'components/message.html' %}
+
 {% for yorum in yorumlar %}
       <div class="card" style="margin-top: 1rem;">
         <div class="card-body" style="display:flex;flex-direction: row;">

@@ -4,13 +4,13 @@
         <div class="card-header">
           Menü
         </div>
-       {% if request.user.is_authenticated %}
+      
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              Profil Düzenle
+              <a href="{% url 'profil-guncelle' %}">Profil Düzenle</a>
             </li>
             <li class="list-group-item">
-              Şifre Değiştir
+              <a href="{% url 'sifre-degistir' %}">Şifre Değiştir</a>
             </li>
             <li class="list-group-item">
               <a href="{% url 'yazi-ekle' %}">Yazı Ekle</a>
@@ -19,12 +19,9 @@
               <a href="{% url 'yazilarim' %}">Yazılarım</a>
             </li>
             <li class="list-group-item">
-              Çıkış Yap
+              <a href="{% url 'cikis' %}">Çıkış Yap</a>
             </li>
           </ul>
-       {% else %}
-          Login formu gelecek
-       {% endif %}
       </div>
 
 </div>
